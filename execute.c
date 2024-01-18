@@ -36,6 +36,7 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, temp);
 		fclose(file);
 		free(content);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	return (1);
