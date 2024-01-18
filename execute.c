@@ -12,6 +12,7 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 	instruction_t op_inst[] = {
 		{"push", push_fun},
 		{"pall", pall_fun},
+		{"pint", pint_fun},
 		{NULL, NULL}
 	};
 
