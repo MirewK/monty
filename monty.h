@@ -1,5 +1,31 @@
+#ifndef MONTY_H
+#define MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
+#include <ctype.h>
+
+/**
+ * struct data_d - a central data carrier, storing and transporting essential information
+ * @val: character pointer used to store a value
+ * @file: file pointer that points to the opened Monty bytecode file
+ * @content: character pointer that holds the content of a line from Monty
+ * @d_flag: integer flag used to control the behavior of the stack or queue
+ *
+ * Description: ensure data consistency and streamlining operations.
+ */
+typedef struct data_d
+{
+	char *val;
+	FILE *file;
+	char *content;
+	int d_flag;
+} data_d;
+extern data_d data;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -28,4 +54,10 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(stack_t **stack, unsigned int line_number);
+int main(int argc, char *argv[]);
+int execute(char *content, stack_t **head, unsigned int line_number, FILE *file);
+void add_node(stack_t **head, int n);
+void push_fun(stack_t **head, unsigned int line_number);
+void pall_fun(stack_t **stack, unsigned int line_number);
+
+#endif

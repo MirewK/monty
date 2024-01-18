@@ -5,9 +5,10 @@
  * @stack: double pointer to the top of the stack
  * @line_number: the line number in the file
  */
-void push(stack_t **stack, unsigned int line_number)
+void push_fun(stack_t **stack, unsigned int line_number)
 {
 	int value;
+	stack_t *new_node;
 
 	if (data == NULL)
 	{
@@ -17,7 +18,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	value = atoi(data);
 
-	stack_t *new_node = malloc(sizeof(stack_t));
+	new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
 	{
