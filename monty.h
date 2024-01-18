@@ -60,5 +60,6 @@ void add_node(stack_t **head, int n);
 void free_stack(stack_t *stack);
 void push_fun(stack_t **head, unsigned int line_number);
 void pall_fun(stack_t **stack, unsigned int line_number);
+void pint_fun(stack_t **stack, unsigned int line_number);
 
 #endif
