@@ -1,37 +1,41 @@
 #include "monty.h"
 
 /**
- * push - pushes an element onto the stack
+ * push_fun - pushes an element onto the stack
  * @stack: double pointer to the top of the stack
  * @line_number: the line number in the file
  */
 void push_fun(stack_t **stack, unsigned int line_number)
 {
-	int value;
-	stack_t *new_node;
+	int i, j = 0, flag = 0;
 
-	if (data == NULL)
+	if (data.val)
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		if (data.val[0] == '-')
+			j++;
+		for (; data.val[j] != '\0'; j++)
+		{
+			if (data.val[j] > 57 || data.val[j] < 48)
+				flag = 1;
+		}
+		if (flag == 1)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fclose(data.file);
+			free(data.content);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(data.file);
+		free(data.content);
 		exit(EXIT_FAILURE);
 	}
-
-	value = atoi(data);
-
-	new_node = malloc(sizeof(stack_t));
-
-	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-	new_node->n = value;
-
-	new_node->next = *stack;
-	if (*stack != NULL)
-	{
-		(*stack)->prev = new_node;
-	}
-	*stack = new_node;
-	new_node->prev = NULL;
+	i = atoi(data.val);
+	if (data.d_flag == 0)
+		add_node(stack, i);
+	else
+		add_node(stack, i);
 }
