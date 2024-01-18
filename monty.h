@@ -65,5 +65,7 @@ void pop_fun(stack_t **stack, unsigned int line_number);
 void swap_fun(stack_t **stack, unsigned int line_number);
 void add_fun(stack_t **stack, unsigned int line_number);
 void nop_fun(stack_t **stack, unsigned int line_number);
+void stack_fun(stack_t **stack, unsigned int line_number);
+void queue_fun(stack_t **stack, unsigned int line_number);
 
 #endif
