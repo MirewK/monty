@@ -1,6 +1,6 @@
 #define _GNU_SOURCE
 #include "monty.h"
-
+data_d data = {NULL, NULL, NULL, 0};
 /**
  * main - responsible for orchestrating the program's overall logic and actions
  * @argc: integer representing the argument count
