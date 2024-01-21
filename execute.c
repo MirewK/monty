@@ -20,6 +20,7 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 		{"stack", stack_fun},
 		{"queue", queue_fun},
 		{"sub", sub_fun},
+		{"div", div_fun},
 		{NULL, NULL}
 	};
 
