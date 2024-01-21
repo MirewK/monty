@@ -24,6 +24,6 @@ void rotr_fun(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	temp->next = *stack;
 	temp->prev->next = NULL;
 	temp->prev = NULL;
-	(*stack)->prev = copy;
+	(*stack)->prev = temp;
 	(*stack) = temp;
 }
