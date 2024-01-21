@@ -23,6 +23,7 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 		{"div", div_fun},
 		{"mul", mul_fun},
 		{"mod", mod_fun},
+		{"pchar", pchar_fun},
 		{NULL, NULL}
 	};
 
