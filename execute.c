@@ -24,6 +24,7 @@ int execute(char *content, stack_t **head, unsigned int line_number, FILE *file)
 		{"mul", mul_fun},
 		{"mod", mod_fun},
 		{"pchar", pchar_fun},
+		{"pstr", pstr_fun},
 		{NULL, NULL}
 	};
 
