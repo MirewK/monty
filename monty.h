@@ -57,6 +57,7 @@ typedef struct instruction_s
 int main(int argc, char *argv[]);
 int execute(char *content, stack_t **head, unsigned int line_number, FILE *file);
 void add_node(stack_t **head, int n);
+void add_queue(stack_t **stack, int n);
 void free_stack(stack_t *stack);
 void push_fun(stack_t **head, unsigned int line_number);
 void pall_fun(stack_t **stack, unsigned int line_number);

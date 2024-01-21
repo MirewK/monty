@@ -39,5 +39,5 @@ void push_fun(stack_t **stack, unsigned int line_number)
 	if (data.d_flag == 0)
 		add_node(stack, i);
 	else
-		add_node(stack, i);
+		add_queue(stack, i);
 }
